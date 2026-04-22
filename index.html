@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Important Question ❤️</title>
+  <title>Love Challenge ❤️</title>
   <style>
     body {
       text-align: center;
@@ -9,40 +9,60 @@
       margin-top: 100px;
       background: #ffe6e6;
     }
-    h1 {
-      color: #ff4d4d;
-    }
     button {
       padding: 10px 20px;
       margin: 10px;
       font-size: 18px;
-      border: none;
       border-radius: 10px;
+      border: none;
       cursor: pointer;
     }
     .yes { background: green; color: white; }
     .no { background: red; color: white; }
   </style>
 </head>
+
 <body>
 
-<h1>💍 Bubu meri jaan Kya tum mujhse shaadi karogi? ❤️</h1>
+<h1 id="question">Step 1: Bubu, kya tum mujhe pasand karti ho? 😏</h1>
 
-<button class="yes" onclick="sayYes()">Haan ❤️</button>
-<button class="no" onclick="sayNo()">Naa 😜</button>
+<div id="buttons">
+  <button class="yes" onclick="step2()">Haan 😍</button>
+  <button class="no" onclick="step2()">Naa 😜</button>
+</div>
 
 <h2 id="result"></h2>
 
 <script>
-function sayYes() {
-  document.getElementById("result").innerHTML =
-    "Yayyy! ❤️ Tumne Yes choose kiya 😍 Love you!";
+
+function step2() {
+  document.getElementById("question").innerHTML = "Step 2: Bubu, kya tum mere bina reh sakti ho? 😏";
+
+  document.getElementById("buttons").innerHTML = `
+    <button class="yes" onclick="step3()">Haan 😬</button>
+    <button class="no" onclick="step3()">Nahi ❤️</button>
+  `;
 }
 
-function sayNo() {
-  document.getElementById("result").innerHTML =
-    "😏 Thank you for choosing YES ❤️ (No option allowed 😂)";
+function step3() {
+  document.getElementById("question").innerHTML = "Final Step 💍 Bubu, kya tum mujhse shaadi karogi? ❤️";
+
+  document.getElementById("buttons").innerHTML = `
+    <button class="yes" onclick="yes()">Haan ❤️</button>
+    <button class="no" onclick="no()">Naa 😜</button>
+  `;
 }
+
+function yes() {
+  document.getElementById("result").innerHTML =
+    "💖 Bubu, tumne YES bola 😍 Love you forever ❤️";
+}
+
+function no() {
+  document.getElementById("result").innerHTML =
+    "😆 Bubu, No option allowed nahi hai! Tum already YES bol chuki ho ❤️";
+}
+
 </script>
 
 </body>
