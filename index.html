@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Important Question ❤️</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial;
+      margin-top: 100px;
+      background: #ffe6e6;
+    }
+    h1 {
+      color: #ff4d4d;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .yes { background: green; color: white; }
+    .no { background: red; color: white; }
+  </style>
+</head>
+<body>
+
+<h1>💍 Kya tum mujhse shaadi karogi? ❤️</h1>
+
+<button class="yes" onclick="sayYes()">Haan ❤️</button>
+<button class="no" onclick="sayNo()">Naa 😜</button>
+
+<h2 id="result"></h2>
+
+<script>
+function sayYes() {
+  document.getElementById("result").innerHTML =
+    "Yayyy! ❤️ Tumne Yes choose kiya 😍 Love you!";
+}
+
+function sayNo() {
+  document.getElementById("result").innerHTML =
+    "😏 Thank you for choosing YES ❤️ (No option allowed 😂)";
+}
+</script>
+
+</body>
+</html>
