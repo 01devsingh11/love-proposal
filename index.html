@@ -1,34 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Love Challenge ❤️</title>
+  <title>Mission Bubu ❤️</title>
   <style>
     body {
       text-align: center;
       font-family: Arial;
-      margin-top: 100px;
-      background: #ffe6e6;
+      margin-top: 80px;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
     }
+
+    h1 { color: #fff; }
+
     button {
-      padding: 10px 20px;
+      padding: 12px 25px;
       margin: 10px;
       font-size: 18px;
-      border-radius: 10px;
+      border-radius: 12px;
       border: none;
       cursor: pointer;
+      position: relative;
     }
+
     .yes { background: green; color: white; }
-    .no { background: red; color: white; }
+    .no { background: red; color: white; position: absolute; }
+
+    #result {
+      color: white;
+      font-size: 22px;
+      margin-top: 20px;
+    }
   </style>
 </head>
 
 <body>
 
-<h1 id="question">Step 1: Bubu, kya tum mujhe pasand karti ho? 😏</h1>
+<h1 id="question">🎯 Mission Start: Bubu, ready ho ek chhota sa test ke liye? 😏</h1>
 
 <div id="buttons">
-  <button class="yes" onclick="step2()">Haan 😍</button>
-  <button class="no" onclick="step2()">Naa 😜</button>
+  <button class="yes" onclick="step2()">Start 😎</button>
 </div>
 
 <h2 id="result"></h2>
@@ -36,31 +46,40 @@
 <script>
 
 function step2() {
-  document.getElementById("question").innerHTML = "Step 2: Bubu, kya tum mere bina reh sakti ho? 😏";
+  document.getElementById("question").innerHTML = "Step 1: Bubu, kya tum mujhe pasand karti ho? 😍";
 
   document.getElementById("buttons").innerHTML = `
-    <button class="yes" onclick="step3()">Haan 😬</button>
-    <button class="no" onclick="step3()">Nahi ❤️</button>
+    <button class="yes" onclick="step3()">Haan ❤️</button>
+    <button class="no" onmouseover="moveNo(this)">Naa 😜</button>
   `;
 }
 
 function step3() {
-  document.getElementById("question").innerHTML = "Final Step 💍 Bubu, kya tum mujhse shaadi karogi? ❤️";
+  document.getElementById("question").innerHTML = "Step 2: Mere bina life boring hai na? 😏";
+
+  document.getElementById("buttons").innerHTML = `
+    <button class="yes" onclick="finalStep()">Bilkul 😍</button>
+    <button class="no" onmouseover="moveNo(this)">Nahi 😜</button>
+  `;
+}
+
+function finalStep() {
+  document.getElementById("question").innerHTML = "💍 Final Question: Bubu, kya tum mujhse shaadi karogi? ❤️";
 
   document.getElementById("buttons").innerHTML = `
     <button class="yes" onclick="yes()">Haan ❤️</button>
-    <button class="no" onclick="no()">Naa 😜</button>
+    <button class="no" onmouseover="moveNo(this)">Naa 😜</button>
   `;
 }
 
 function yes() {
   document.getElementById("result").innerHTML =
-    "💖 Bubu, tumne YES bola 😍 Love you forever ❤️";
+    "💖 Bubu, tumne YES bol diya 😍❤️ Ab officially tum meri ho! 😎💘";
 }
 
-function no() {
-  document.getElementById("result").innerHTML =
-    "😆 Bubu, No option allowed nahi hai! Tum already YES bol chuki ho ❤️";
+function moveNo(btn) {
+  btn.style.top = Math.random() * 300 + "px";
+  btn.style.left = Math.random() * 300 + "px";
 }
 
 </script>
